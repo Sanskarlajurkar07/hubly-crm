@@ -1,22 +1,17 @@
-import React from 'react';
-import styles from './TrustedBy.module.css';
-import trustedByImage from '../../assets/Group 2147223751.svg';
+import React from "react";
+import styles from "./TrustedBy.module.css";
+import trustedByImage from "../../assets/Group 2147223751.svg";
 
-const TrustedBy = () => {
+export default function Trusted() {
   return (
-    <section className={styles.trustedBy}>
+    <section className={styles.trusted}>
       <div className={styles.container}>
-        <p className={styles.subtitle}>Trusted by leading companies</p>
-        <div className={styles.logos}>
-          <img 
-            src={trustedByImage} 
-            alt="Trusted by leading companies"
-            className={styles.logoImage}
-          />
-        </div>
+        <img 
+          src={trustedByImage} 
+          alt="Trusted by leading businesses" 
+          className={styles.strip} 
+        />
       </div>
     </section>
   );
-};
-
-export default TrustedBy;
+}

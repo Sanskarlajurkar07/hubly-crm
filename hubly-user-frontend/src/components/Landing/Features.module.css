@@ -1,181 +1,124 @@
-/* Core Features Section */
-.coreFeatures {
-  padding: 80px 0;
-  background: #F9FAFB;
-  text-align: center;
+.features {
+  padding: 100px 0;
+  background: #FFFFFF;
 }
 
+/* Figma ENFORCES center layout */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
-}
+  padding: 0 24px;
 
-.coreFeatures h2 {
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #1F2937;
-  line-height: 1.3;
-}
-
-.description {
-  font-size: 18px;
-  color: #6B7280;
-  max-width: 700px;
-  margin: 0 auto 60px;
-  line-height: 1.8;
-}
-
-/* Features Content Grid */
-.featuresContent {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-  margin-top: 60px;
-}
-
-/* Feature List (Left Side) */
-.featureList {
-  text-align: left;
-}
-
-.featureItem {
-  margin-bottom: 32px;
-}
-
-.featureItem:last-child {
-  margin-bottom: 0;
-}
-
-.featureItem h3 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #1F2937;
-}
-
-.featureItem p {
-  color: #6B7280;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-/* Funnel Diagram (Right Side) */
-.funnelDiagram {
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.funnelDiagram svg {
-  width: 100%;
-  height: auto;
-}
-
-/* Image Section */
-.featureImage {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  margin-top: 3rem;
+  text-align: center;
 }
 
-.image {
-  max-width: 100%;
-  width: 600px;
-  height: auto;
-  object-fit: contain;
+/* === Figma Title === */
+.title {
+  width: 100%;
+  max-width: 673px;
+
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 120%; /* 53px */
+  color: #30404D;
+
+  margin-bottom: 20px;
 }
 
-/* Tablet Styles */
-@media (max-width: 1024px) {
-  .coreFeatures {
-    padding: 60px 0;
+/* === Figma Subtitle === */
+.subtitle {
+  width: 100%;
+  max-width: 725px;
+
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%; /* 25px */
+  color: #30404D;
+
+  opacity: 0.9;
+  margin-bottom: 60px;
+}
+
+/* === Figma 3×2 Grid === */
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* === Feature Card === */
+.card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Icon */
+.icon {
+  width: 64px;
+  height: 64px;
+}
+
+/* Card Title */
+.cardTitle {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #30404D;
+}
+
+/* Card Description */
+.cardDesc {
+  font-family: 'Barlow', sans-serif;
+  font-size: 15px;
+  line-height: 150%;
+  color: #30404D;
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
   }
 
-  .coreFeatures h2 {
-    font-size: 32px;
-  }
-
-  .description {
-    font-size: 17px;
-    margin-bottom: 50px;
-  }
-
-  .featuresContent {
-    gap: 50px;
-  }
-
-  .featureItem h3 {
-    font-size: 19px;
-  }
-
-  .featureItem p {
-    font-size: 15px;
+  .title {
+    font-size: 36px;
   }
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-  .coreFeatures {
-    padding: 50px 0;
-  }
-
-  .coreFeatures h2 {
-    font-size: 28px;
-    margin-bottom: 16px;
-  }
-
-  .description {
-    font-size: 16px;
-    margin-bottom: 40px;
-  }
-
-  .featuresContent {
+@media (max-width: 600px) {
+  .grid {
     grid-template-columns: 1fr;
-    gap: 40px;
-    margin-top: 40px;
   }
 
-  .featureItem {
-    margin-bottom: 28px;
+  .title {
+    font-size: 32px;
+    max-width: 90%;
   }
 
-  .featureItem h3 {
-    font-size: 18px;
-  }
-
-  .featureItem p {
-    font-size: 15px;
-  }
-
-  .funnelDiagram {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .coreFeatures {
-    padding: 40px 0;
-  }
-
-  .coreFeatures h2 {
-    font-size: 24px;
-  }
-
-  .description {
-    font-size: 15px;
-  }
-
-  .featureItem h3 {
+  .subtitle {
     font-size: 16px;
-  }
-
-  .featureItem p {
-    font-size: 14px;
+    max-width: 90%;
   }
 }

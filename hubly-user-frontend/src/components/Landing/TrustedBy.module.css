@@ -1,95 +1,32 @@
-/* TrustedBy Section */
-.trustedBy {
-  padding: 60px 0;
-  background: white;
-  text-align: center;
+.trusted {
+  background: #EBF1F9;
+  padding: 48px 0;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
-}
+  padding: 0 24px;
 
-.subtitle {
-  color: #6B7280;
-  margin-bottom: 20px;
-  font-size: 16px;
-  font-weight: 400;
-}
-
-.logos {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 2rem;
+  justify-content: center;
 }
 
-.logoImage {
-  max-width: 100%;
-  width: 800px;
+.strip {
+  width: 100%;
   height: auto;
-  object-fit: contain;
+  max-width: 1440px;
+  opacity: 0.95;
+  transition: opacity 0.2s ease;
 }
 
-.companyName {
-  font-size: 24px;
-  font-weight: 600;
-  color: #9CA3AF;
-  transition: all 0.3s ease;
-  cursor: default;
-}
-
-.companyName:hover {
+.strip:hover {
   opacity: 1;
-  color: #6B7280;
 }
 
-/* Tablet Styles */
-@media (max-width: 1024px) {
-  .trustedBy {
-    padding: 50px 0;
-  }
-
-  .logos {
-    gap: 50px;
-  }
-
-  .companyName {
-    font-size: 22px;
-  }
-}
-
-/* Mobile Styles */
 @media (max-width: 768px) {
-  .trustedBy {
-    padding: 40px 0;
-  }
-
-  .subtitle {
-    font-size: 15px;
-  }
-
-  .logos {
-    gap: 40px;
-    margin-top: 25px;
-  }
-
-  .companyName {
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .trustedBy {
-    padding: 35px 0;
-  }
-
-  .logos {
-    gap: 30px;
-  }
-
-  .companyName {
-    font-size: 18px;
+  .strip {
+    max-width: 100%;
   }
 }
