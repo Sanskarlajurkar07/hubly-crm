@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './ChatWidget.module.css';
 import api from '../../services/api';
+import Avatar from '../../assets/Avater/Avater.svg';
 
 const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -83,25 +84,36 @@ const ChatWidget = () => {
       {/* Popup Message */}
       {showPopup && !isOpen && (
         <div className={styles.popupMessage}>
-          {settings.popMessage}
+          <button
+            className={styles.popupClose}
+            onClick={() => setShowPopup(false)}
+            aria-label="Close announcement"
+          >
+            ×
+          </button>
+          <div className={styles.popupAvatar}>
+            <img src={Avatar} alt="Hubly bot" />
+          </div>
+          <p>{settings.popMessage}</p>
         </div>
       )}
 
       {/* Chat Box */}
       {isOpen && (
         <div className={styles.chatBox}>
-          <div 
-            className={styles.chatHeader} 
-            style={{ backgroundColor: settings.headerColor }}
-          >
+          <div className={styles.chatHeader}>
             <div className={styles.headerLeft}>
               <div className={styles.botAvatar}>
-                <span role="img" aria-label="bot">🤖</span>
+                <img src={Avatar} alt="Hubly bot" />
+                <span className={styles.statusDot} />
               </div>
-              <span>Hubly</span>
+              <div>
+                <p className={styles.brandName}>Hubly</p>
+                <span className={styles.brandStatus}>We reply as fast as we can</span>
+              </div>
             </div>
-            <button 
-              className={styles.closeBtn} 
+            <button
+              className={styles.closeBtn}
               onClick={handleToggle}
               aria-label="Close chat"
             >
@@ -109,16 +121,21 @@ const ChatWidget = () => {
             </button>
           </div>
 
-          <div 
-            className={styles.chatBody}
-            style={{ backgroundColor: settings.backgroundColor }}
-          >
-            {!isSubmitted ? (
-              <>
-                <div className={styles.introSection}>
-                  <h3>Introduction Yourself</h3>
+          <div className={styles.chatBody}>
+            <div className={styles.greetingBubble}>
+              <span>Hey!</span>
+            </div>
+
+            <div className={styles.formCard}>
+              <div className={styles.formAvatar}>
+                <img src={Avatar} alt="Hubly assistant avatar" />
+              </div>
+
+              {!isSubmitted ? (
+                <>
+                  <p className={styles.formTitle}>Introduction Yourself</p>
                   <div className={styles.formGroup}>
-                    <label>{settings.namePlaceholder}</label>
+                    <label>Your name</label>
                     <input
                       type="text"
                       name="name"
@@ -128,7 +145,7 @@ const ChatWidget = () => {
                     />
                   </div>
                   <div className={styles.formGroup}>
-                    <label>{settings.phonePlaceholder}</label>
+                    <label>Your Phone</label>
                     <input
                       type="tel"
                       name="phone"
@@ -138,7 +155,7 @@ const ChatWidget = () => {
                     />
                   </div>
                   <div className={styles.formGroup}>
-                    <label>{settings.emailPlaceholder}</label>
+                    <label>Your Email</label>
                     <input
                       type="email"
                       name="email"
@@ -147,33 +164,47 @@ const ChatWidget = () => {
                       placeholder={settings.emailPlaceholder}
                     />
                   </div>
-                  <button 
+                  <button
                     className={styles.submitBtn}
                     onClick={handleSubmit}
                     disabled={loading}
                   >
                     {loading ? 'Submitting...' : 'Thank You!'}
                   </button>
+                </>
+              ) : (
+                <div className={styles.thankYouMessage}>
+                  <p>Thank you!</p>
+                  <span>Our team will get back to you soon.</span>
                 </div>
-              </>
-            ) : (
-              <div className={styles.thankYouMessage}>
-                <h3>Thank you!</h3>
-                <p>Our team will get back to you soon.</p>
-              </div>
-            )}
+              )}
+            </div>
           </div>
 
-          {isSubmitted && (
-            <div className={styles.chatFooter}>
-              <input 
-                type="text" 
-                placeholder="Write a message" 
-                disabled
-              />
-              <button disabled>→</button>
-            </div>
-          )}
+          <div className={styles.chatFooter}>
+            <input
+              type="text"
+              placeholder="Write a message"
+              disabled={!isSubmitted}
+            />
+            <button disabled={!isSubmitted} aria-label="Send message">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       )}
 

@@ -81,6 +81,7 @@
 
 /* Hero Title - Figma Exact: 54px, 700 weight */
 .heroText h1 {
+  font-family: 'Barlow', sans-serif;
   font-size: var(--hero-title-size);
   font-weight: var(--hero-title-weight);
   line-height: 1.2;
@@ -91,6 +92,7 @@
 
 /* Subtitle - Figma Exact: 16px, 400 weight, 140% line-height */
 .heroText p {
+  font-family: 'Barlow', sans-serif;
   font-size: var(--hero-subtitle-size);
   font-weight: var(--hero-subtitle-weight);
   line-height: var(--hero-subtitle-line);
@@ -111,6 +113,7 @@
 
 /* Base Button Styles */
 .btn {
+  font-family: 'Barlow', sans-serif;
   padding: var(--space-12) var(--space-24);
   border-radius: var(--radius-button);
   font-size: var(--hero-button-size);

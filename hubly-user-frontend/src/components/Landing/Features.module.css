@@ -13,20 +13,30 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+
+  gap: 24px;
 }
 
 /* === Figma Title === */
 .title {
   width: 100%;
   max-width: 673px;
+  height: auto;
 
   font-family: 'Barlow', sans-serif;
+  font-style: normal;
   font-weight: 700;
   font-size: 44px;
-  line-height: 120%; /* 53px */
+  line-height: 120%;
+  text-align: center;
   color: #30404D;
 
-  margin-bottom: 20px;
+  margin: 0;
+  padding: 0;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 }
 
 /* === Figma Subtitle === */
@@ -38,10 +48,11 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 140%; /* 25px */
+  text-align: center;
   color: #30404D;
 
   opacity: 0.9;
-  margin-bottom: 60px;
+  margin-bottom: 45px;
 }
 
 /* === Figma 3×2 Grid === */
@@ -95,6 +106,49 @@
   opacity: 0.8;
 }
 
+/* Core Features Section */
+.coreFeatures {
+  padding: 100px 0;
+  background: #FFFFFF;
+}
+
+.coreFeatures h2 {
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #30404D;
+  margin-bottom: 24px;
+  max-width: 725px;
+  font-family: 'Barlow', sans-serif;
+}
+
+.coreFeatures .subtitle {
+  margin-bottom: 60px;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.4;
+  color: #30404D;
+  opacity: 1;
+  margin-bottom: 60px;
+  max-width: 725px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+}
+
+.featureImage {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Responsive */
 @media (max-width: 992px) {
   .grid {
@@ -104,6 +158,21 @@
 
   .title {
     font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .coreFeatures {
+    padding: 60px 0 80px 0;
+  }
+
+  .coreFeatures h2 {
+    font-size: 32px;
+  }
+
+  .description {
+    font-size: 16px;
+    margin-bottom: 40px;
   }
 }
 
